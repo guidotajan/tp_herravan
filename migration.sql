@@ -61,3 +61,6 @@ CREATE TABLE rubros (
 
 ALTER TABLE productos
 ADD COLUMN rubro_id INT NOT NULL;
+
+ALTER TABLE productos
+ADD FOREIGN KEY (rubro_id) REFERENCES rubros(id);
