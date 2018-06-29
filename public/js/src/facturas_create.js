@@ -26,7 +26,17 @@ class DetailsForm extends React.Component {
         cantidad: cantidadInput.value,
         subtotal: Number(cantidadInput.value * producto.precio).toFixed(2)
       };
-      this.setState({ detalles: [...this.state.detalles, detalle] });
+      const detalles = [...this.state.detalles];
+      const lastIndex = detalles.findIndex(d => d.productoId == detalle.productoId)
+      if (lastIndex !== -1) {
+        const ultimoDetalle = detalles[lastIndex];
+        detalle.cantidad = (Number(detalle.cantidad) + Number(ultimoDetalle.cantidad)).toString();
+        detalle.subtotal = (Number(detalle.subtotal) + Number(ultimoDetalle.subtotal)).toFixed(2);
+        detalles[lastIndex] = detalle;
+      } else {
+        detalles.push(detalle);
+      }
+      this.setState({ detalles });
       productoIdInput.value = "";
       cantidadInput.value = "";
       return false;

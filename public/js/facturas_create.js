@@ -43,7 +43,19 @@ var DetailsForm = function (_React$Component) {
         cantidad: cantidadInput.value,
         subtotal: Number(cantidadInput.value * producto.precio).toFixed(2)
       };
-      _this.setState({ detalles: [].concat(_toConsumableArray(_this.state.detalles), [detalle]) });
+      var detalles = [].concat(_toConsumableArray(_this.state.detalles));
+      var lastIndex = detalles.findIndex(function (d) {
+        return d.productoId == detalle.productoId;
+      });
+      if (lastIndex !== -1) {
+        var ultimoDetalle = detalles[lastIndex];
+        detalle.cantidad = (Number(detalle.cantidad) + Number(ultimoDetalle.cantidad)).toString();
+        detalle.subtotal = (Number(detalle.subtotal) + Number(ultimoDetalle.subtotal)).toFixed(2);
+        detalles[lastIndex] = detalle;
+      } else {
+        detalles.push(detalle);
+      }
+      _this.setState({ detalles: detalles });
       productoIdInput.value = "";
       cantidadInput.value = "";
       return false;
