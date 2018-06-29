@@ -29,6 +29,18 @@
         <td><?php echo $cliente['fecha_nacimiento'] ?></td>
         <td><?php echo $cliente['dni'] ?></td>
         <td><?php echo $cliente['domicilio'] ?></td>
+        <td>
+          <div class="btn-group">
+            <button type="submit" form="edit<?php echo $cliente['id'] ?>" class="btn btn-secondary btn-sm">Editar</button>
+            <button type="submit" form="delete<?php echo $cliente['id'] ?>" class="btn btn-danger btn-sm">Eliminar</button>
+          </div>
+          <form action="edit.php" method="get" id="edit<?php echo $cliente['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $cliente['id'] ?>">
+          </form>
+          <form action="delete.php" method="post" id="delete<?php echo $cliente['id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $cliente['id'] ?>">
+          </form>
+        </td>
       </tr>
     <?php } ?>
   </tbody>
