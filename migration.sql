@@ -64,3 +64,6 @@ ADD COLUMN rubro_id INT NOT NULL;
 
 ALTER TABLE productos
 ADD FOREIGN KEY (rubro_id) REFERENCES rubros(id);
+
+ALTER TABLE clientes
+ADD COLUMN estado INT DEFAULT 1;
