@@ -7,6 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav mr-auto">
       <a class="nav-item nav-link" href="<?php echo ROOT_URI.'productos/' ?>">Productos</a>
+      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'clientes/' ?>">Clientes</a>
     </div>
     <a class="btn btn-light" href="<?php echo ROOT_URI.'logout.php' ?>">Salir</a>
   </div>
