@@ -8,11 +8,11 @@
   $conn = getConnection();
   if (isset($rubro_id)) {
     if ($rubro_id == 0) header('Location: index.php');
-    $query = $conn->prepare("SELECT productos.*, rubros.nombre AS rubro FROM productos LEFT JOIN rubros ON rubros.id = productos.rubro_id WHERE productos.estado != 0 AND productos.rubro_id = ?;");
+    $query = $conn->prepare("SELECT productos.*, rubros.nombre AS rubro FROM productos LEFT JOIN rubros ON rubros.id = productos.rubro_id WHERE productos.estado != 0 AND productos.rubro_id = ? ORDER BY rubro, descripcion;");
     $query->execute([$rubro_id]);
     $productos = $query->fetchAll();
   } else {
-    $productos = $conn->query("SELECT productos.*, rubros.nombre AS rubro FROM productos LEFT JOIN rubros ON rubros.id = productos.rubro_id WHERE productos.estado != 0;")->fetchAll();
+    $productos = $conn->query("SELECT productos.*, rubros.nombre AS rubro FROM productos LEFT JOIN rubros ON rubros.id = productos.rubro_id WHERE productos.estado != 0 ORDER BY rubro, descripcion;")->fetchAll();
   }
 
   $rubros = $conn->query("SELECT * FROM rubros;")->fetchAll();

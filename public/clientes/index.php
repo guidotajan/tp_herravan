@@ -8,9 +8,9 @@ if (isset($_GET['fecha_i'], $_GET['fecha_f'])) {
 }
 
 if (!isset($limites)) {
-  $clientes = getConnection()->query("SELECT * FROM clientes WHERE estado != 0;")->fetchAll();
+  $clientes = getConnection()->query("SELECT * FROM clientes WHERE estado != 0 ORDER BY nombre_apellido;")->fetchAll();
 } else {
-  $query = getConnection()->prepare("SELECT * FROM clientes WHERE estado != 0 AND fecha_nacimiento BETWEEN ? AND ?;");
+  $query = getConnection()->prepare("SELECT * FROM clientes WHERE estado != 0 AND fecha_nacimiento BETWEEN ? AND ? ORDER BY nombre_apellido;");
   $query->execute($limites);
   $clientes = $query->fetchAll();
 }
