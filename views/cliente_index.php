@@ -1,4 +1,4 @@
-<h2>Clientes</h2>
+<h2>Clientes<a href="create.php" class="btn btn-primary btn-sm align-bottom ml-3">Crear cliente</a></h2>
 <hr/>
 <form action="index.php" method="get">
   <div class="input-group mb-3">
