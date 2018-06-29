@@ -70,9 +70,9 @@ class DetailsForm extends React.Component {
               const producto = productos.find(p => p.id == detalle.productoId);
               return (
                 <tr key={index}>
-                  <td>{producto.descripcion}</td>
-                  <td>{detalle.cantidad}</td>
-                  <td>${detalle.subtotal}</td>
+                  <td class="align-middle">{producto.descripcion}</td>
+                  <td class="align-middle">{detalle.cantidad}</td>
+                  <td class="align-middle">${detalle.subtotal}</td>
                   <td>
                     <button
                       className="btn btn-sm btn-danger"

@@ -20,15 +20,16 @@
       <th>Fecha Nacimiento</th>
       <th>DNI</th>
       <th>Domicilio</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($clientes as $cliente) { ?>
       <tr>
-        <td><?php echo $cliente['nombre_apellido'] ?></td>
-        <td><?php echo $cliente['fecha_nacimiento'] ?></td>
-        <td><?php echo $cliente['dni'] ?></td>
-        <td><?php echo $cliente['domicilio'] ?></td>
+        <td class="align-middle"><?php echo $cliente['nombre_apellido'] ?></td>
+        <td class="align-middle"><?php echo $cliente['fecha_nacimiento'] ?></td>
+        <td class="align-middle"><?php echo $cliente['dni'] ?></td>
+        <td class="align-middle"><?php echo $cliente['domicilio'] ?></td>
         <td>
           <div class="btn-group">
             <button type="submit" form="edit<?php echo $cliente['id'] ?>" class="btn btn-secondary btn-sm">Editar</button>

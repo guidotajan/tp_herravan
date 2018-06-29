@@ -26,6 +26,7 @@
       <th>Stock</th>
       <th>Rubro</th>
       <th>Fecha Alta</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>

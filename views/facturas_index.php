@@ -7,16 +7,17 @@
       <th>Cliente</th>
       <th>Total</th>
       <th>Tipo de Factura</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <?php foreach($facturas as $factura) { ?>
       <tr>
-        <td>#<?php echo $factura['id'] ?></td>
-        <td><?php echo $factura['fecha'] ?></td>
-        <td><?php echo $factura['cliente'] ?></td>
-        <td>$<?php echo $factura['total'] ?></td>
-        <td><?php echo $factura['tipo_factura'] ?></td>
+        <td class="align-middle">#<?php echo $factura['id'] ?></td>
+        <td class="align-middle"><?php echo $factura['fecha'] ?></td>
+        <td class="align-middle"><?php echo $factura['cliente'] ?></td>
+        <td class="align-middle">$<?php echo $factura['total'] ?></td>
+        <td class="align-middle"><?php echo $factura['tipo_factura'] ?></td>
         <td>
           <form action="show.php" method="get">
             <input type="hidden" name="id" value="<?php echo $factura['id']; ?>">

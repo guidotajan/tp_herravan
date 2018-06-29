@@ -124,17 +124,17 @@ var DetailsForm = function (_React$Component) {
                 { key: index },
                 React.createElement(
                   "td",
-                  null,
+                  { "class": "align-middle" },
                   producto.descripcion
                 ),
                 React.createElement(
                   "td",
-                  null,
+                  { "class": "align-middle" },
                   detalle.cantidad
                 ),
                 React.createElement(
                   "td",
-                  null,
+                  { "class": "align-middle" },
                   "$",
                   detalle.subtotal
                 ),
