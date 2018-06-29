@@ -9,10 +9,14 @@ if (isset($result)) {
   }
 }
 ?>
+<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<!--
 <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-<!-- Sacar en producción -->
+ Sacar en producción
 <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+-->
 <script>
   const productos = <?php echo json_encode($productos); ?>;
 </script>
