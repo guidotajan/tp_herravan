@@ -2,4 +2,4 @@
 require_once('../auth.php');
 
 logOut();
-checkAuth([], '');
+checkAuth([1]);
