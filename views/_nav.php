@@ -6,8 +6,10 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="navbar-nav mr-auto">
-      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'productos/' ?>">Productos</a>
+      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'facturas/create.php' ?>">Nueva Factura</a>
+      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'facturas/' ?>">Facturas</a>
       <a class="nav-item nav-link" href="<?php echo ROOT_URI.'clientes/' ?>">Clientes</a>
+      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'productos/' ?>">Productos</a>
     </div>
     <a class="btn btn-light" href="<?php echo ROOT_URI.'logout.php' ?>">Salir</a>
   </div>
