@@ -11,6 +11,7 @@ function DetailInputContainer(props) {
 class DetailsForm extends React.Component {
   constructor(props) {
     super(props);
+    this.onDelete = this.onDelete.bind(this);
     this.state = {
       detalles: [],
     };
@@ -32,6 +33,15 @@ class DetailsForm extends React.Component {
     });
   }
 
+  onDelete(i) {
+    return (e) => {
+      e.preventDefault();
+      const detalles = [...this.state.detalles];
+      detalles.splice(i, 1);
+      this.setState({ detalles });
+    }
+  }
+
   render() {
     const { detalles } = this.state;
     return (
@@ -42,6 +52,7 @@ class DetailsForm extends React.Component {
               <th>Descripcion</th>
               <th>Cantidad</th>
               <th>Subtotal</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +63,14 @@ class DetailsForm extends React.Component {
                   <td>{producto.descripcion}</td>
                   <td>{detalle.cantidad}</td>
                   <td>${detalle.subtotal}</td>
+                  <td>
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={this.onDelete(index)}
+                    >
+                      Quitar
+                    </button>
+                  </td>
                 </tr>
               );
             })}

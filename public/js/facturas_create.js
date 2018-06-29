@@ -26,6 +26,7 @@ var DetailsForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (DetailsForm.__proto__ || Object.getPrototypeOf(DetailsForm)).call(this, props));
 
+    _this.onDelete = _this.onDelete.bind(_this);
     _this.state = {
       detalles: []
     };
@@ -51,8 +52,22 @@ var DetailsForm = function (_React$Component) {
   }
 
   _createClass(DetailsForm, [{
+    key: "onDelete",
+    value: function onDelete(i) {
+      var _this2 = this;
+
+      return function (e) {
+        e.preventDefault();
+        var detalles = [].concat(_toConsumableArray(_this2.state.detalles));
+        detalles.splice(i, 1);
+        _this2.setState({ detalles: detalles });
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var detalles = this.state.detalles;
 
       return React.createElement(
@@ -81,7 +96,8 @@ var DetailsForm = function (_React$Component) {
                 "th",
                 null,
                 "Subtotal"
-              )
+              ),
+              React.createElement("th", null)
             )
           ),
           React.createElement(
@@ -109,6 +125,18 @@ var DetailsForm = function (_React$Component) {
                   null,
                   "$",
                   detalle.subtotal
+                ),
+                React.createElement(
+                  "td",
+                  null,
+                  React.createElement(
+                    "button",
+                    {
+                      className: "btn btn-sm btn-danger",
+                      onClick: _this3.onDelete(index)
+                    },
+                    "Quitar"
+                  )
                 )
               );
             })
