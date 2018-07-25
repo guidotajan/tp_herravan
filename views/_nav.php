@@ -10,6 +10,7 @@
       <a class="nav-item nav-link" href="<?php echo ROOT_URI.'facturas/' ?>">Facturas</a>
       <a class="nav-item nav-link" href="<?php echo ROOT_URI.'clientes/' ?>">Clientes</a>
       <a class="nav-item nav-link" href="<?php echo ROOT_URI.'productos/' ?>">Productos</a>
+      <a class="nav-item nav-link" href="<?php echo ROOT_URI.'rubros/' ?>">Rubros</a>
     </div>
     <a class="btn btn-light" href="<?php echo ROOT_URI.'logout.php' ?>">Salir</a>
   </div>
